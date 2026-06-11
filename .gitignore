@@ -17,6 +17,9 @@
 # ---- macOS ----
 .DS_Store
 
+# ---- GitHub Pages build output (assembled in CI) ----
+_site/
+
 # ---- Claude Code local session config ----
 .claude/
 

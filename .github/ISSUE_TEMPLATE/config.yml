@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Awesome-CV (upstream class)
+    url: https://github.com/posquit0/Awesome-CV
+    about: Questions about the underlying Awesome-CV LaTeX class.

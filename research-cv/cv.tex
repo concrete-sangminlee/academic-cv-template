@@ -140,8 +140,13 @@
 % Uniform line height (baseline grid) for all body text. Increase for more breathing room.
 \newcommand{\cvgrid}{15pt}
 
-% ---- Times New Roman throughout ----
-\setmainfont{Times New Roman}
+% ---- Times New Roman throughout, with a portable fallback ----
+% Use Times New Roman when it is installed (e.g. macOS); otherwise fall back to
+% the free, metric-compatible TeX Gyre Termes that ships with TeX Live, so the
+% CV builds anywhere (Linux, CI) without installing Microsoft fonts.
+\IfFontExistsTF{Times New Roman}
+  {\setmainfont{Times New Roman}}
+  {\setmainfont{TeX Gyre Termes}}
 
 % ---- Uniform spacing: no paragraph skip/indent, so every \par break = one baseline ----
 \setlength{\parskip}{0pt}

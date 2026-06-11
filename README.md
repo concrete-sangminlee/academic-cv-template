@@ -8,6 +8,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/concrete-sangminlee/academic-cv-template/actions/workflows/build.yml"><img src="https://github.com/concrete-sangminlee/academic-cv-template/actions/workflows/build.yml/badge.svg" alt="build status"></a>
   <a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg" alt="License: CC BY-SA 4.0"></a>
   <img src="https://img.shields.io/badge/Made%20with-XeLaTeX-008080.svg" alt="Made with XeLaTeX">
   <img src="https://img.shields.io/badge/template-academic%20CV-1F6FEB.svg" alt="Academic CV template">
@@ -18,7 +19,9 @@
 </p>
 
 <p align="center">
-  📄 <a href="research-cv/cv.pdf"><b>View the full example PDF →</b></a>
+  🌐 <a href="https://concrete-sangminlee.github.io/academic-cv-template/"><b>Live preview</b></a>
+  &nbsp;·&nbsp;
+  📄 <a href="research-cv/cv.pdf"><b>Example PDF</b></a>
 </p>
 
 ## Why this template?
@@ -31,6 +34,7 @@ Customizations over vanilla Awesome-CV, aimed at a polished academic look:
 - **Photo + centered header** — optional 3:4 portrait alongside a page-centered name block.
 - **Numbered** publications, patents, and honors.
 - **Sections a grad student actually needs**, pre-built and ready to edit (see below).
+- **Builds anywhere** — an automatic font fallback and a CI build that proves every commit compiles.
 
 ## Sections included
 
@@ -62,9 +66,9 @@ research-cv/
 ## Requirements
 
 - A TeX distribution with **XeLaTeX** — TeX Live 2023+ or MacTeX (XeLaTeX is required for system-font support).
-- The **Times New Roman** font installed on your system:
-  - **macOS** — pre-installed, nothing to do.
-  - **Linux** — install via `ttf-mscorefonts-installer`, or swap in the free metric-compatible substitute by editing `cv.tex` → `\setmainfont{TeX Gyre Termes}`.
+- A serif font — **Times New Roman** is used when installed, otherwise the build falls back automatically:
+  - **macOS** — Times New Roman is pre-installed; nothing to do.
+  - **Linux / CI** — no action needed; the template uses **TeX Gyre Termes** (a free, metric-compatible Times bundled with TeX Live).
 
 ## Build
 
@@ -73,7 +77,7 @@ cd research-cv
 latexmk -xelatex cv.tex
 ```
 
-The output is `research-cv/cv.pdf`.
+The output is `research-cv/cv.pdf`. Every push is also compiled by GitHub Actions — see the **build** badge above.
 
 ## Make it your own
 
@@ -95,3 +99,7 @@ The output is `research-cv/cv.pdf`.
 ## License
 
 The template — the LaTeX class and document structure — is distributed under **CC BY-SA 4.0**, inherited from Awesome-CV. The example CV content is included for illustration; replace it with your own.
+
+---
+
+<p align="center"><sub>If this template helps with your CV, a ⭐ is appreciated — it helps other graduate students find it.</sub></p>
