@@ -1,19 +1,52 @@
-# Curriculum Vitae — Sang Min Lee
+<h1 align="center">Academic CV Template for Graduate Students</h1>
 
-LaTeX source for my academic CV.
-Ph.D. Candidate in Artificial Intelligence, Seoul National University — deep learning for structural &amp; wind engineering.
+<p align="center">
+  A clean, single-column LaTeX CV template built on <a href="https://github.com/posquit0/Awesome-CV">Awesome-CV</a> —
+  Times New Roman, a perfectly uniform baseline grid, and the sections a graduate student actually needs.
+  <br>
+  It ships as a complete worked example (the author's own CV) that you fork and fill in with your own content.
+</p>
 
-📄 **[Download the latest PDF →](research-cv/cv.pdf)**
+<p align="center">
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg" alt="License: CC BY-SA 4.0"></a>
+  <img src="https://img.shields.io/badge/Made%20with-XeLaTeX-008080.svg" alt="Made with XeLaTeX">
+  <img src="https://img.shields.io/badge/template-academic%20CV-1F6FEB.svg" alt="Academic CV template">
+</p>
+
+<p align="center">
+  <img src="docs/preview.png" width="520" alt="CV preview — page 1">
+</p>
+
+<p align="center">
+  📄 <a href="research-cv/cv.pdf"><b>View the full example PDF →</b></a>
+</p>
+
+## Why this template?
+
+Customizations over vanilla Awesome-CV, aimed at a polished academic look:
+
+- **Times New Roman throughout** — the academic standard, instead of the default sans-serif.
+- **Uniform baseline grid** — every line sits on a rigid 15&nbsp;pt grid (`\cvgrid`), so line spacing stays perfectly consistent across every section.
+- **Clear hierarchy** — flush-left section headers, indented content, right-aligned dates.
+- **Photo + centered header** — optional 3:4 portrait alongside a page-centered name block.
+- **Numbered** publications, patents, and honors.
+- **Sections a grad student actually needs**, pre-built and ready to edit (see below).
+
+## Sections included
+
+Summary · Research Interests · Education · Experience · Publications (international / domestic journals & conferences) · Patents · Honors & Awards · Licensure & Certification · Professional Membership.
+
+Add, remove, or reorder any of them by editing the `\input{...}` lines in `cv.tex`.
 
 ## Repository structure
 
 ```
 research-cv/
-├── cv.tex            # Main document: personal info, package setup, section includes
-├── awesome-cv.cls    # Document class (customized: Times New Roman, uniform 15pt grid)
-├── profile.jpg       # Photo
-├── cv.pdf            # Compiled output
-└── cv/               # Section content
+├── cv.tex            # Main document: personal info, packages, section includes, style knobs
+├── awesome-cv.cls    # Document class (customized: Times New Roman, uniform 15 pt grid)
+├── profile.jpg       # Photo (3:4 portrait)
+├── cv.pdf            # Compiled example output
+└── cv/               # One file per section — edit these
     ├── aboutme.tex             # Summary & Research Interests
     ├── education.tex
     ├── research_experience.tex # Experience
@@ -21,21 +54,44 @@ research-cv/
     ├── patents.tex
     ├── honors.tex              # Honors & Awards
     ├── certificates.tex        # Licensure & Certification
-    └── committees.tex          # Professional Membership
+    ├── committees.tex          # Professional Membership
+    ├── skills.tex              # optional — disabled by default
+    └── teaching.tex            # optional — disabled by default
 ```
 
-## Building
+## Requirements
 
-Requires a TeX distribution with **XeLaTeX** (e.g. TeX Live / MacTeX) and the **Times New Roman** font installed on the system.
+- A TeX distribution with **XeLaTeX** — TeX Live 2023+ or MacTeX (XeLaTeX is required for system-font support).
+- The **Times New Roman** font installed on your system:
+  - **macOS** — pre-installed, nothing to do.
+  - **Linux** — install via `ttf-mscorefonts-installer`, or swap in the free metric-compatible substitute by editing `cv.tex` → `\setmainfont{TeX Gyre Termes}`.
+
+## Build
 
 ```bash
 cd research-cv
 latexmk -xelatex cv.tex
 ```
 
+The output is `research-cv/cv.pdf`.
+
+## Make it your own
+
+1. Click the green **Use this template** button above (or fork / clone the repo).
+2. **Personal info** — edit the header block in `research-cv/cv.tex`:
+   `\name`, `\position`, `\email`, `\homepage`, `\photo`.
+   Optional fields are provided commented-out — uncomment what you want: `\mobile`, `\github`, `\linkedin`, `\googlescholar`.
+3. **Photo** — replace `research-cv/profile.jpg` with your own 3:4 portrait (or comment out `\photo` to drop it).
+4. **Content** — edit the section files in `research-cv/cv/`; each one is self-contained.
+5. **Sections** — comment / uncomment the `\input{...}` lines in `cv.tex` to add, remove, or reorder sections.
+6. **Spacing & fonts** (optional) — tune the knobs in the `cv.tex` preamble:
+   `\cvgrid` (baseline-grid line height), `\setmainfont` (typeface), `\cvindent` (content indent).
+
 ## Credits
 
 - Built on [Awesome-CV](https://github.com/posquit0/Awesome-CV) by Claud D. Park ([@posquit0](https://github.com/posquit0)).
 - Academic layout adapted from [Awesome-PhD-CV](https://github.com/LimHyungTae/Awesome-PhD-CV) by Hyungtae Lim.
 
-The template is licensed under CC BY-SA 4.0; the CV content is © Sang Min Lee.
+## License
+
+The template — the LaTeX class and document structure — is distributed under **CC BY-SA 4.0**, inherited from Awesome-CV. The example CV content is included for illustration; replace it with your own.
