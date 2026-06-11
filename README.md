@@ -15,7 +15,9 @@
 </p>
 
 <p align="center">
-  <img src="docs/preview.png" width="520" alt="CV preview — page 1">
+  <img src="docs/preview.png" width="250" alt="CV — page 1">
+  <img src="docs/preview-2.png" width="250" alt="CV — page 2">
+  <img src="docs/preview-3.png" width="250" alt="CV — page 3">
 </p>
 
 <p align="center">
@@ -77,7 +79,9 @@ cd research-cv
 latexmk -xelatex cv.tex
 ```
 
-The output is `research-cv/cv.pdf`. Every push is also compiled by GitHub Actions — see the **build** badge above.
+The output is `research-cv/cv.pdf`. Convenience targets are also available from the repo root: `make pdf`, `make preview` (regenerate the README images), and `make clean`.
+
+Every push is also compiled by GitHub Actions — see the **build** badge above.
 
 ## Make it your own
 
@@ -90,6 +94,44 @@ The output is `research-cv/cv.pdf`. Every push is also compiled by GitHub Action
 5. **Sections** — comment / uncomment the `\input{...}` lines in `cv.tex` to add, remove, or reorder sections.
 6. **Spacing & fonts** (optional) — tune the knobs in the `cv.tex` preamble:
    `\cvgrid` (baseline-grid line height), `\setmainfont` (typeface), `\cvindent` (content indent).
+
+## FAQ
+
+<details>
+<summary><b>It compiles, but the font isn't Times New Roman.</b></summary>
+
+That's expected on Linux/CI: Times New Roman isn't installed there, so the template falls back to **TeX Gyre Termes** (a free, metric-compatible Times). To force real Times New Roman, install the Microsoft fonts (`ttf-mscorefonts-installer` on Debian/Ubuntu). To use a different serif, edit `\setmainfont` in `cv.tex`.
+</details>
+
+<details>
+<summary><b>It won't compile — <code>fontspec</code> / font errors.</b></summary>
+
+This template needs **XeLaTeX**, not pdfLaTeX. Build with `latexmk -xelatex cv.tex` (or `make pdf`), and set your editor's engine to XeLaTeX.
+</details>
+
+<details>
+<summary><b>How do I change or remove the photo?</b></summary>
+
+Replace `research-cv/profile.jpg` with your own **3:4 portrait** (the frame is 2.1 cm × 2.8 cm). To remove it, comment out the `\photo{...}` line in `cv.tex`.
+</details>
+
+<details>
+<summary><b>How do I add Google Scholar, GitHub, or LinkedIn?</b></summary>
+
+Uncomment the matching field in the header block of `cv.tex`: `\googlescholar`, `\github`, `\linkedin` (and `\mobile` for a phone number).
+</details>
+
+<details>
+<summary><b>How do I make the CV shorter?</b></summary>
+
+Trim the section content first. To tighten spacing globally, lower `\cvgrid` in the `cv.tex` preamble (e.g. from `15pt` to `14pt`); disable whole sections by commenting their `\input{...}` lines.
+</details>
+
+<details>
+<summary><b>How do I change the accent color?</b></summary>
+
+Edit `\definecolor{awesome}{HTML}{101CA4}` in `cv.tex` to your own hex color.
+</details>
 
 ## Credits
 
