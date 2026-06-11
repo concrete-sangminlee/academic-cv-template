@@ -14,6 +14,10 @@
 *.toc
 *.xdv
 
+# ---- Personal PDF exports: track only the canonical cv.pdf ----
+research-cv/*.pdf
+!research-cv/cv.pdf
+
 # ---- macOS ----
 .DS_Store
 
