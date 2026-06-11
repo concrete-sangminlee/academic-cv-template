@@ -1,0 +1,186 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%\usepackage{natbib}
+%\usepackage{bibentry}
+%\nobibliography*
+
+% enable korean?
+%\usepackage{ifthen}
+%\newboolean{kor}
+%\setboolean{kor}{true}
+%\newcommand\koronly[1]{\ifthenelse{\boolean{kor}}{#1}}
+%\newcommand{\rss}{Robotics: Science and Systems~(RSS)}
+%\newcommand{\iccv}{CVF Int. Conf. Comput. Vis.~(ICCV)}
+%\newcommand{\ral}{IEEE Robot. Automat. Lett.~(RA-L)}
+%\newcommand{\iros}{Proc. IEEE/RSJ Int. Conf. Intell. Robot. Syst.~(IROS)}
+%\newcommand{\icra}{Proc. IEEE Int. Conf. Robot. Automat.~(ICRA)}
+%\newcommand{\tro}{IEEE Trans. Robot.~(T-RO)}
+%\newcommand{\iccas}{Proc. Int. Conf. Control, Automat. Syst.~(ICCAS)}
+%\newcommand{\urconf}{Proc. Int. Conf. Ubiquitous Robot.~(UR)}
+
+%\usepackage{kotex}
+
+% the below is to make domestic bib items to have bullet instead of [1]
+\makeatletter
+\renewcommand\@biblabel[1]{\textbullet}
+\makeatother
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+\usepackage[font=footnotesize]{subcaption}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{cite}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{wrapfig}
+\usepackage{xspace}
+\usepackage{wasysym}
+\usepackage{booktabs} % toprule, midrule, and bottomrule
+\usepackage{fontspec}
+\usepackage{pifont}
+% \usepackage{fontawesome5}
+\captionsetup[figure]{labelformat={default},labelsep=period,name={Fig.}}
+
+\Crefname{section}{Sec.}{Secs.} 
+\Crefname{figure}{Fig.}{Figs.} 
+\Crefname{table}{Table}{Tables} 
+% To simplify Equation (#) to (#)
+\crefname{equation}{}{}
+\Crefname{equation}{}{}
+
+\definecolor{justblue}{HTML}{0000F1}
+% Not to use xcolor, define colors manually using RGB values
+\definecolor{Violet}{rgb}{0.56, 0.0, 0.85}        
+\definecolor{BurntOrange}{rgb}{0.9, 0.45, 0.0}    
+\definecolor{Cerulean}{rgb}{0.0, 0.48, 0.90}      
+
+% \newcommand{\githubstars}[2]{[\href{#1}{\faGithubSquare}~\textbf{★~#2}]}
+\newcommand{\githubstars}[1]{[{\faGithubSquare}\,\ding{72} \textbf{#1}]}
+\newcommand{\paperif}[1]{\textcolor{justblue}{[IF: \textbf{#1}]}}
+\newcommand{\papercitation}[1]{\textcolor{justblue}{[Citations: \textbf{#1}]}}
+\newcommand{\paperinfo}[2]{\textcolor{justblue}{[IF: \textbf{#1}, Citations: \textbf{#2}]}}
+
+% Bold the CV author's own name in the publication / patent lists.
+% \xspace keeps the space when \me is followed by a word (e.g. "\me and Kang")
+% but adds none before punctuation (e.g. "\me, Hong").
+\newcommand{\me}{\textbf{Lee, S. M.}\xspace}
+
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+% \colorlet{awesome}{awesome-skyblue}
+% Uncomment if you would like to specify your own color
+\definecolor{awesome}{HTML}{101CA4}
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+% \definecolor{sectiondivider}{HTML}{5D5D5D}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{false}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+\photo[rectangle,noedge,right]{./profile.jpg}
+\name{Sang Min}{Lee}
+\position{Ph.D. Candidate in Artificial Intelligence{\enskip\cdotp\enskip}Structural \& Wind Engineering}
+\address{Seoul, Republic of Korea}
+
+\email{201612445@snu.ac.kr}
+% \mobile{(+82) 10-9146-6169}  % omitted from public repo
+%\dateofbirth{January 1st, 1970}
+\homepage{concrete-sangminlee.github.io}
+% \github{concrete-sangminlee}
+% \linkedin{your-linkedin-id}
+% \googlescholar{googlescholar-id}{Google Scholar}
+% \extrainfo{extra information}
+
+\newif\ifshowcontent % 새로운 조건변수 생성
+\showcontenttrue % regarding link
+
+% ---- Indentation hierarchy: section content is indented under flush-left headers ----
+\usepackage{changepage}
+\newlength{\cvindent}
+\setlength{\cvindent}{0.5cm}
+% One extra indent level for the degree/role line and its bullets, under the institution.
+\newlength{\entryindent}
+\setlength{\entryindent}{0.4cm}
+\newlength{\cvitemleft}
+\setlength{\cvitemleft}{2ex}
+% Uniform line height (baseline grid) for all body text. Increase for more breathing room.
+\newcommand{\cvgrid}{15pt}
+
+% ---- Times New Roman throughout ----
+\setmainfont{Times New Roman}
+
+% ---- Uniform spacing: no paragraph skip/indent, so every \par break = one baseline ----
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+% Force EXACTLY \baselineskip between every pair of lines (never switch to \lineskip,
+% even for tall bold lines) -> a perfectly rigid 13.6pt baseline grid.
+\lineskiplimit=-1000pt
+
+% \quote{``Your motto here''}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal information
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Sang Min Lee~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+\input{cv/aboutme.tex}
+\input{cv/education.tex}
+\input{cv/research_experience.tex}
+\input{cv/publications}
+\input{cv/patents}
+\input{cv/honors.tex}
+% \input{cv/teaching}        % <-- enable after filling in cv/teaching.tex (TA courses)
+\input{cv/certificates.tex}
+\input{cv/committees.tex}
+
+%\bibliographystyle{IEEETran}
+%\nobibliography{cv/ref}
+%-------------------------------------------------------------------------------
+\end{document}

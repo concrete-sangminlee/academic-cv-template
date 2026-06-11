@@ -1,0 +1,24 @@
+# ---- LaTeX build artifacts (regenerated on compile) ----
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# ---- macOS ----
+.DS_Store
+
+# ---- Claude Code local session config ----
+.claude/
+
+# ---- Original source materials: raw Word doc + photo (kept local, not published) ----
+source/
