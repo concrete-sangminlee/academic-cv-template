@@ -653,7 +653,7 @@
 \newcommand{\descblockindent}[1]{\begingroup\setlength{\cvitemleft}{\dimexpr\entryindent+2ex\relax}\descriptionstyle{#1}\par\endgroup}
 \newcommand*{\cventry}[5]{%
   \ifempty{#2#3}
-    {\entryheaderline{\entrypositionstyle{#1}}{\entrydatestyle{#4}}\ifempty{#5}{}{\descblock{#5}}}%
+    {\entryheaderline{\entrypositionstyle{#1}}{\entrydatestyle{#4}}\ifempty{#5}{}{\descblockindent{#5}}}%
     {\entryheaderline{\entrytitlestyle{#2}}{\entrylocationstyle{#3}}%
      \entryheaderlinesub{\entrypositionstyle{#1}}{\entrydatestyle{#4}}\ifempty{#5}{}{\descblockindent{#5}}}%
 }
