@@ -671,20 +671,13 @@
   \ifempty{#5}{}{\vspace{-\cvgrid}\descblockindent{#5}}%
 }
 
-% Light divider between entries (used between education degrees).
+% Light divider between entries and subsections: a thin rule on its own full
+% grid row, so the spacing around it is identical everywhere in the document.
 \newcommand{\cventrydivider}{%
-  \par\begingroup
-  \vspace{-0.4\dimexpr\cvgrid\relax}%
-  \noindent{\color{graytext!25}\rule{\linewidth}{0.4pt}}\par
-  \vspace{-0.4\dimexpr\cvgrid\relax}%
-  \endgroup
-}
-
-% Same divider, but on its own full grid row (used between publication
-% subsections, where no entry rows surround it).
-\newcommand{\cvsubsectiondivider}{%
   \par\noindent{\color{graytext!25}\rule{\linewidth}{0.4pt}}\par
 }
+
+\let\cvsubsectiondivider\cventrydivider
 
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
