@@ -674,9 +674,9 @@
 % Light divider between entries (used between education degrees).
 \newcommand{\cventrydivider}{%
   \par\begingroup
-  \vspace{-0.4\cvgrid}%
+  \vspace{-0.4\dimexpr\cvgrid\relax}%
   \noindent{\color{graytext!25}\rule{\linewidth}{0.4pt}}\par
-  \vspace{-0.4\cvgrid}%
+  \vspace{-0.4\dimexpr\cvgrid\relax}%
   \endgroup
 }
 
