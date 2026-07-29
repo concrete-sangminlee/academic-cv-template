@@ -671,6 +671,15 @@
   \ifempty{#5}{}{\vspace{-\cvgrid}\descblockindent{#5}}%
 }
 
+% Light divider between entries (used between education degrees).
+\newcommand{\cventrydivider}{%
+  \par\begingroup
+  \vspace{-0.4\cvgrid}%
+  \noindent{\color{graytext!25}\rule{\linewidth}{0.4pt}}\par
+  \vspace{-0.4\cvgrid}%
+  \endgroup
+}
+
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
   \begin{center}
