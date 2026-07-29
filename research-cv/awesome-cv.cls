@@ -674,7 +674,11 @@
 % Light divider between entries and subsections: a thin rule on its own full
 % grid row, so the spacing around it is identical everywhere in the document.
 \newcommand{\cventrydivider}{%
-  \par\noindent{\color{graytext!25}\rule{\linewidth}{0.4pt}}\par
+  \par\begingroup
+  \vspace{-0.2\dimexpr\cvgrid\relax}%
+  \noindent{\color{graytext!25}\rule{\linewidth}{0.4pt}}\par
+  \vspace{-0.2\dimexpr\cvgrid\relax}%
+  \endgroup
 }
 
 \let\cvsubsectiondivider\cventrydivider
