@@ -668,7 +668,7 @@
     {\entrytitlestyle{#1}\ifempty{#2}{}{\entrypositionstyle{, #2}}}%
     {\entrylocationstyle{#3}}%
   \entryheaderline{}{\entrydatestyle{#4}}%
-  \ifempty{#5}{}{\descblockindent{#5}}%
+  \ifempty{#5}{}{\vspace{-\cvgrid}\descblockindent{#5}}%
 }
 
 % Define an environment for cvsubentry
