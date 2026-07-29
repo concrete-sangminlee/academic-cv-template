@@ -664,18 +664,11 @@
 \newlength{\entryrightwidth}
 \setlength{\entryrightwidth}{5.6cm}
 \newcommand*{\cventrycompact}[5]{%
-  \noindent
-  \begin{minipage}[t]{\dimexpr\linewidth-\entryrightwidth\relax}
-    \baselineskip\cvgrid\relax
-    \entrytitlestyle{#1}\ifempty{#2}{}{\entrypositionstyle{, #2}}%
-  \end{minipage}%
-  \begin{minipage}[t]{\entryrightwidth}
-    \baselineskip\cvgrid\relax
-    \raggedleft
-    \ifempty{#3}{\mbox{}}{\entrylocationstyle{#3}}\\
-    \entrydatestyle{#4}%
-  \end{minipage}\par
-  \ifempty{#5}{\vspace{\cvgrid}}{\descblockindent{#5}}%
+  \entryheaderline
+    {\entrytitlestyle{#1}\ifempty{#2}{}{\entrypositionstyle{, #2}}}%
+    {\entrylocationstyle{#3}}%
+  \entryheaderline{}{\entrydatestyle{#4}}%
+  \ifempty{#5}{}{\descblockindent{#5}}%
 }
 
 % Define an environment for cvsubentry
