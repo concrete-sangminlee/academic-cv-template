@@ -658,6 +658,26 @@
      \entryheaderlinesub{\entrypositionstyle{#1}}{\entrydatestyle{#4}}\ifempty{#5}{}{\descblockindent{#5}}}%
 }
 
+% Compact entry: single-line left block (bold main text, regular affiliation)
+% and an independent right block stacking location over date.
+% Usage: \cventrycompact{<main>}{<affiliation>}{<location>}{<date>}{<description>}
+\newlength{\entryrightwidth}
+\setlength{\entryrightwidth}{5.6cm}
+\newcommand*{\cventrycompact}[5]{%
+  \noindent
+  \begin{minipage}[t]{\dimexpr\linewidth-\entryrightwidth\relax}
+    \baselineskip\cvgrid\relax
+    \entrytitlestyle{#1}\ifempty{#2}{}{\entrypositionstyle{, #2}}%
+  \end{minipage}%
+  \begin{minipage}[t]{\entryrightwidth}
+    \baselineskip\cvgrid\relax
+    \raggedleft
+    \ifempty{#3}{\mbox{}}{\entrylocationstyle{#3}}\\
+    \entrydatestyle{#4}%
+  \end{minipage}\par
+  \ifempty{#5}{\vspace{\cvgrid}}{\descblockindent{#5}}%
+}
+
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
   \begin{center}
