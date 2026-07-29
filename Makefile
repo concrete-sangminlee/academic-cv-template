@@ -10,11 +10,12 @@ DOCS := docs
 pdf:
 	cd $(ROOT) && latexmk -xelatex $(MAIN)
 
-# Regenerate the page previews shown in the README (from the 3-page example).
+# Regenerate the page previews shown in the README (from the 4-page example).
 preview: pdf
 	pdftoppm -png -r 150 -f 1 -l 1 -singlefile $(PDF) $(DOCS)/preview
 	pdftoppm -png -r 150 -f 2 -l 2 -singlefile $(PDF) $(DOCS)/preview-2
 	pdftoppm -png -r 150 -f 3 -l 3 -singlefile $(PDF) $(DOCS)/preview-3
+	pdftoppm -png -r 150 -f 4 -l 4 -singlefile $(PDF) $(DOCS)/preview-4
 
 # Remove LaTeX build artifacts (keeps the PDF).
 clean:

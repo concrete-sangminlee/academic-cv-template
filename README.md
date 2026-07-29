@@ -18,6 +18,7 @@
   <img src="docs/preview.png" width="250" alt="CV — page 1">
   <img src="docs/preview-2.png" width="250" alt="CV — page 2">
   <img src="docs/preview-3.png" width="250" alt="CV — page 3">
+  <img src="docs/preview-4.png" width="250" alt="CV — page 4">
 </p>
 
 <p align="center">
