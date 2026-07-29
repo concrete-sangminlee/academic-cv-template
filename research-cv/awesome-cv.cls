@@ -680,6 +680,12 @@
   \endgroup
 }
 
+% Same divider, but on its own full grid row (used between publication
+% subsections, where no entry rows surround it).
+\newcommand{\cvsubsectiondivider}{%
+  \par\noindent{\color{graytext!25}\rule{\linewidth}{0.4pt}}\par
+}
+
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
   \begin{center}
