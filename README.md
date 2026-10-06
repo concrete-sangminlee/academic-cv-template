@@ -22,8 +22,6 @@
 </p>
 
 <p align="center">
-  🌐 <a href="https://concrete-sangminlee.github.io/academic-cv-template/"><b>Live preview</b></a>
-  &nbsp;·&nbsp;
   📄 <a href="research-cv/cv.pdf"><b>Example PDF</b></a>
 </p>
 
